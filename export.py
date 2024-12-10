@@ -6,13 +6,6 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("export2.csv")
 df_c = pd.read_csv("export_countries.csv")
 
-if df['Year'].dtype == 'object': 
-    df['Year'] = df['Year'].str.replace(',', '', regex=False) 
-
-if df_c['Year'].dtype == 'object': 
-    df_c['Year'] = df_c['Year'].str.replace(',', '', regex=False) 
-    
-df_c['Year'] = df_c['Year'].astype(int)
 
 st.title('Mongolian Export Data Analysis')
 
@@ -59,7 +52,6 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.xticks(ticks=filtered_data['Year'].unique(), labels=filtered_data['Year'].unique(), rotation=45)
 st.pyplot(plt)
-
 
 
 
